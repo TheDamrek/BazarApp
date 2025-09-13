@@ -26,7 +26,7 @@ class LoginScreen extends StatelessWidget {
             ),
             const SizedBox(height: 24),
 
-            // Email field
+            
             const TextField(
               style: TextStyle(color: Colors.white),
               decoration: InputDecoration(
@@ -42,7 +42,7 @@ class LoginScreen extends StatelessWidget {
             ),
             const SizedBox(height: 8),
 
-            // Password field
+           
             const TextField(
               obscureText: true,
               style: TextStyle(color: Colors.white),
@@ -60,7 +60,7 @@ class LoginScreen extends StatelessWidget {
             ),
             const SizedBox(height: 8),
 
-            // Forgot password
+            
             Align(
               alignment: Alignment.centerLeft,
               child: TextButton(
@@ -73,7 +73,7 @@ class LoginScreen extends StatelessWidget {
             ),
             const SizedBox(height: 8),
 
-            // Login button
+            
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
@@ -87,7 +87,7 @@ class LoginScreen extends StatelessWidget {
             ),
             const SizedBox(height: 8),
 
-            // Divider
+            
             Row(
               children: const [
                 Expanded(child: Divider(color: Colors.grey)),
@@ -100,7 +100,7 @@ class LoginScreen extends StatelessWidget {
             ),
             const SizedBox(height: 8),
 
-            // Facebook login
+            
             TextButton.icon(
               onPressed: () {},
               icon: const Icon(Icons.facebook, color: Colors.blue),
@@ -111,7 +111,7 @@ class LoginScreen extends StatelessWidget {
             ),
             const SizedBox(height: 8),
 
-            // Sign up
+            
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
