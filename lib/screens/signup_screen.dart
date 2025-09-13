@@ -92,6 +92,70 @@ class SignUpScreen extends StatelessWidget {
                 suffixIcon: Icon( Icons.visibility_off, color: Colors.grey)
               ),
             ),
+            
+            const SizedBox(height: 20),
+SizedBox(
+  width: double.infinity,
+  child: ElevatedButton(
+    onPressed: () {
+    },
+    style: ElevatedButton.styleFrom(
+      backgroundColor: Colors.deepPurple,
+      padding: const EdgeInsets.symmetric(vertical: 16),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(30),
+      ),
+    ),
+    child: const Text(
+      "Register",
+      style: TextStyle(color: Colors.white,fontSize: 18, fontWeight: FontWeight.bold),
+    ),
+  ),
+),
+const SizedBox(height: 10),
+const Center(
+  child: Text(
+    "Already have an account?",
+    style: TextStyle(fontSize: 16, color: Colors.grey),
+  ),
+),
+const SizedBox(height: 5),
+Center(
+  child: GestureDetector(
+    onTap: () { 
+    },
+    child: const Text(
+      "Sign in",
+      style: TextStyle(
+        fontSize: 16,
+        color: Colors.deepPurple,
+        fontWeight: FontWeight.bold,
+      ),
+    ),
+  ),
+),
+const SizedBox(height: 48),
+const Center(
+  child: Text(
+    "By clicking register, you agree to our",
+    style: TextStyle(fontSize: 12, color: Colors.grey),
+  ),
+),
+const SizedBox(height: 5),
+Center(
+  child: GestureDetector(
+    onTap: () { 
+    },
+    child: const Text(
+      "Terms and Data Policy.",
+      style: TextStyle(
+        fontSize: 12,
+        color: Colors.deepPurple,
+        fontWeight: FontWeight.bold,
+      ),
+    ),
+  ),
+),
           ],
         ),
       ),
