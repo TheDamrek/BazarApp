@@ -1,23 +1,23 @@
 import 'package:flutter/material.dart';
-import 'profile_screen.dart';
 import 'category_screen.dart';
+import 'profile_screen.dart';
 import 'bottom_nav.dart';
-import 'wishlist_screen.dart';
+import 'homepage_screen.dart';
 
-class HomePageScreen extends StatelessWidget {
-  const HomePageScreen({super.key});
+class WishlistScreen extends StatelessWidget {
+  const WishlistScreen({super.key});
 
   void _navigate(BuildContext context, int index) {
-    if (index == 0) return;
+    if (index == 2) return;
     if (index == 1) {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(builder: (_) => const CategoryScreen()),
       );
-    } else if (index == 2) {
+    } else if (index == 0) {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (_) => const WishlistScreen()),
+        MaterialPageRoute(builder: (_) => const HomePageScreen()),
       );
     } else if (index == 3) {
       Navigator.pushReplacement(
@@ -32,7 +32,7 @@ class HomePageScreen extends StatelessWidget {
     return Scaffold(
       body: const Center(
         child: Text(
-          "Home Screen",
+          "Wishlist Screen",
           style: TextStyle(fontSize: 24),
         ),
       ),
