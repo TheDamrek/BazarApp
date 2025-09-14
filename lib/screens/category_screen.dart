@@ -37,7 +37,7 @@ class CategoryScreen extends StatelessWidget {
         ),
       ),
       bottomNavigationBar: CustomBottomNavigation(
-        currentIndex: 0,
+        currentIndex: 1,
         onTap: (index) => _navigate(context, index),
       ),
     );

@@ -37,7 +37,7 @@ class WishlistScreen extends StatelessWidget {
         ),
       ),
       bottomNavigationBar: CustomBottomNavigation(
-        currentIndex: 0,
+        currentIndex: 2,
         onTap: (index) => _navigate(context, index),
       ),
     );

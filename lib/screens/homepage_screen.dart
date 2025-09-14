@@ -30,12 +30,27 @@ class HomePageScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: const Center(
-        child: Text(
-          "Home Screen",
-          style: TextStyle(fontSize: 24),
+     body: Padding(
+        padding: const EdgeInsets.only(top: 60, left: 20, right: 20),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            const Icon(Icons.notifications, size: 30),
+            const Text(
+              "Home",
+              style: TextStyle(
+                fontSize: 25,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            const Icon(Icons.search, size: 30),
+          ],
         ),
-      ),
+        
+     ),
+      
+      
+      
       bottomNavigationBar: CustomBottomNavigation(
         currentIndex: 0,
         onTap: (index) => _navigate(context, index),

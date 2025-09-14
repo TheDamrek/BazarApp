@@ -37,7 +37,7 @@ class ProfileScreen extends StatelessWidget {
         ),
       ),
       bottomNavigationBar: CustomBottomNavigation(
-        currentIndex: 0,
+        currentIndex: 3,
         onTap: (index) => _navigate(context, index),
       ),
     );

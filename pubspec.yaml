@@ -89,3 +89,4 @@ flutter:
   # see https://flutter.dev/to/font-from-package
   assets:
     - pictures/bazar.png 
+    - pictures/resurrection.jpg
