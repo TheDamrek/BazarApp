@@ -32,22 +32,80 @@ class HomePageScreen extends StatelessWidget {
     return Scaffold(
      body: Padding(
         padding: const EdgeInsets.only(top: 60, left: 20, right: 20),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            const Icon(Icons.notifications, size: 30),
-            const Text(
-              "Home",
-              style: TextStyle(
-                fontSize: 25,
-                fontWeight: FontWeight.bold,
-              ),
+      Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: const [
+          Icon(Icons.notifications, size: 30),
+          Text(
+            "Home",
+            style: TextStyle(
+              fontSize: 25,
+              fontWeight: FontWeight.bold,
             ),
-            const Icon(Icons.search, size: 30),
+          ),
+          Icon(Icons.search, size: 30),
+        ],
+      ),
+
+
+      const SizedBox(height: 20),
+      Container(
+        height: 200,
+        decoration: BoxDecoration(
+          border: Border.all(color: Colors.grey.shade300),
+          borderRadius: BorderRadius.circular(15),
+        ),
+        padding: EdgeInsets.all(16),
+  child: Row(
+    children: [
+      Expanded(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              "SPECIAL OFFER",
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            ),
+            SizedBox(height: 8),
+            Text(
+              "25% reduction!",
+              style: TextStyle(fontSize: 14, color: Colors.grey),
+            ),
+            SizedBox(height: 12),
+            ElevatedButton(
+              onPressed: () {},
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.deepPurple,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(8),
+                ),
+              ),
+              child: Text("Buy now"
+                  , style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold, color: Colors.white))
+            ),
           ],
         ),
-        
-     ),
+      ),
+      SizedBox(width: 20),
+      ClipRRect(
+        borderRadius: BorderRadius.circular(12),
+        child: Image.asset(
+          "pictures/resurrection.jpg",
+          width: 200,
+          height: 200,
+          fit: BoxFit.cover,
+        ),
+      ),
+    ],
+  ),
+),
+],    
+ ),
+        ),
       
       
       
