@@ -27,6 +27,30 @@ class HomePageScreen extends StatelessWidget {
     }
   }
 
+static const List<Map<String, String>> books = [
+  {"title": "Resurrection", "image": "pictures/resurrection.jpg"},
+  {"title": "Finders Keepers", "image": "pictures/finders_keepers.jpg"},
+  {"title": "1984", "image": "pictures/1984.jpg"},
+  {"title": "Lazarus", "image": "pictures/lazarus.jpg"},
+  {"title": "The Gambler", "image": "pictures/the_gambler.jpg"},
+  {"title": "The Life Before Us", "image": "pictures/TLBU.jpg"},
+  {"title": "Letters To Milena", "image": "pictures/LTM.jpg"},
+  {"title": "Letter From An Unknown Woman", "image": "pictures/LFAUW.jpg"},
+];
+
+static const List<Map<String, String>> authors = [
+  {"name": "S.King", "image": "pictures/stephkingp.jpg"},
+  {"name": "L.Andreyev", "image": "pictures/andreyev.jpg"},
+  {"name": "G.Orwell", "image": "pictures/orwell.jpg"},
+  {"name": "Y.Khadra", "image": "pictures/yasminakhadra.jpg"},
+  {"name": "L.Tolstoi", "image": "pictures/tolstoi.webp"},
+  {"name": "F.Kafka", "image": "pictures/kafka.jpg"},
+  {"name": "E.Cioran", "image": "pictures/cioran.jpg"},
+  {"name": "F.Dostoyevski", "image": "pictures/dostoyevsky.jpg"},
+  {"name": "S.Zwieg", "image": "pictures/zwieg.jpg"},
+];
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -103,10 +127,134 @@ class HomePageScreen extends StatelessWidget {
     ],
   ),
 ),
+
+const SizedBox(height: 30),
+Padding(
+  padding: const EdgeInsets.symmetric(horizontal: 16.0),
+  child: Row(
+    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    children: [
+      Text(
+        "Books",
+        style: TextStyle(
+          fontSize: 20,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+      Text(
+        "See all",
+        style: TextStyle(
+          fontSize: 14,
+          color: Colors.deepPurple,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+    ],
+  ),
+),
+
+
+const SizedBox(height: 20), 
+SizedBox(
+  height: 200,
+  child: ListView.builder(
+    scrollDirection: Axis.horizontal,
+    itemCount: books.length,
+    itemBuilder: (context, index) {
+      return Container(
+        width: 120,
+        margin: const EdgeInsets.only(right: 12),
+        child: Column(
+          children: [
+            ClipRRect(
+              borderRadius: BorderRadius.circular(12),
+              child: Image.asset(
+                books[index]["image"]!,
+                width: 100,
+                height: 140,
+                fit: BoxFit.cover,
+              ),
+            ),
+            const SizedBox(height: 8),
+            Text(
+              books[index]["title"]!,
+              style: const TextStyle(
+                fontSize: 14,
+                fontWeight: FontWeight.bold,
+              ),
+              overflow: TextOverflow.ellipsis,
+            ),
+          ],
+        ),
+      );
+    },
+  ),
+),
+
+
+const SizedBox(height: 10),
+Padding(
+  padding: const EdgeInsets.symmetric(horizontal: 16.0),
+  child: Row(
+    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    children: [
+      Text(
+        "Authors",
+        style: TextStyle(
+          fontSize: 20,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+      Text(
+        "See all",
+        style: TextStyle(
+          fontSize: 14,
+          color: Colors.deepPurple,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+    ],
+  ),
+),
+
+const SizedBox(height: 15), 
+SizedBox(
+  height: 180,
+  child: ListView.builder(
+    scrollDirection: Axis.horizontal,
+    itemCount: authors.length,
+    itemBuilder: (context, index) {
+      return Container(
+        width: 120,
+        margin: const EdgeInsets.only(right: 12),
+        child: Column(
+          children: [
+            CircleAvatar(
+              radius: 60,
+              backgroundImage: AssetImage(authors[index]["image"]!),
+  ),
+            const SizedBox(height: 8),
+            Text(
+              authors[index]["name"]!,
+              style: const TextStyle(
+                fontSize: 14,
+                fontWeight: FontWeight.bold,
+              ),
+              overflow: TextOverflow.ellipsis,
+            ),
+          ],
+        ),
+      );
+    },
+  ),
+),
+
 ],    
  ),
-        ),
+  ),
       
+
+    
       
       
       bottomNavigationBar: CustomBottomNavigation(
