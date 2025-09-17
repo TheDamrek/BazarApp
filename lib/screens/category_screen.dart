@@ -30,12 +30,14 @@ class CategoryScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: const Center(
-        child: Text(
-          "Category Screen",
-          style: TextStyle(fontSize: 24),
-        ),
-      ),
+       
+      
+      
+      
+      
+      
+      
+      
       bottomNavigationBar: CustomBottomNavigation(
         currentIndex: 1,
         onTap: (index) => _navigate(context, index),
