@@ -9,12 +9,12 @@ import 'screens/category_screen.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  
   await Supabase.initialize(
     url: 'https://yryvwzawjbqykwuckpci.supabase.co',
-    anonKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InlyeXZ3emF3amJxeWt3dWNrcGNpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTgyOTQxMzUsImV4cCI6MjA3Mzg3MDEzNX0.64VhZYaRgaPK_L79wJ-uUCklA7e_peTwthiItK_z20k',
+    anonKey:
+        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InlyeXZ3emF3amJxeWt3dWNrcGNpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTgyOTQxMzUsImV4cCI6MjA3Mzg3MDEzNX0.64VhZYaRgaPK_L79wJ-uUCklA7e_peTwthiItK_z20k',
   );
-     print(  'Supabase Initialized!!!');
+  print('Supabase Initialized!!!');
   runApp(const MyApp());
 }
 
@@ -23,9 +23,17 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: LoginScreen(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const OpeningScreen(),
+        '/login': (context) => const LoginScreen(),
+        '/signup': (context) => const SignUpScreen(),
+        '/homepage': (context) => const HomePageScreen(),
+        '/categories': (context) => const CategoryScreen(),
+      },
     );
   }
 }
+

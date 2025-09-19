@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'signup_screen.dart';
-import 'package:bazar_app/auth/auth_settings.dart';
+import 'homepage_screen.dart';
+import 'package:bazar_app/auth/auth_service.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -42,7 +43,6 @@ class _LoginScreenState extends State<LoginScreen> {
 
                 const SizedBox(height: 40),
 
-                
                 TextFormField(
                   controller: _emailController,
                   decoration: InputDecoration(
@@ -57,7 +57,6 @@ class _LoginScreenState extends State<LoginScreen> {
 
                 const SizedBox(height: 20),
 
-                
                 TextFormField(
                   controller: _passwordController,
                   obscureText: true,
@@ -77,7 +76,9 @@ class _LoginScreenState extends State<LoginScreen> {
                 Align(
                   alignment: Alignment.centerRight,
                   child: TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      // could implement reset password here
+                    },
                     child: const Text(
                       'Forgotten password?',
                       style: TextStyle(color: Colors.deepPurple),
@@ -87,15 +88,31 @@ class _LoginScreenState extends State<LoginScreen> {
 
                 const SizedBox(height: 20),
 
-                
                 SizedBox(
                   width: double.infinity,
                   child: ElevatedButton(
-                    onPressed: () {
+                    onPressed: () async {
                       if (_formKey.currentState!.validate()) {
                         ScaffoldMessenger.of(context).showSnackBar(
                           const SnackBar(content: Text("Logging in...")),
                         );
+
+                        final response = await AuthService().signIn(
+                          email: _emailController.text.trim(),
+                          password: _passwordController.text.trim(),
+                        );
+
+                        if (response.user != null && context.mounted) {
+                          Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const HomePageScreen()),
+                          );
+                        } else {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(content: Text("Login failed")),
+                          );
+                        }
                       }
                     },
                     style: ElevatedButton.styleFrom(
@@ -118,7 +135,6 @@ class _LoginScreenState extends State<LoginScreen> {
 
                 const SizedBox(height: 30),
 
-                
                 Row(
                   children: const [
                     Expanded(child: Divider(color: Colors.grey)),
@@ -132,10 +148,11 @@ class _LoginScreenState extends State<LoginScreen> {
 
                 const SizedBox(height: 20),
 
-                
                 Center(
                   child: TextButton.icon(
-                    onPressed: () {},
+                    onPressed: () {
+                      // could add social login here
+                    },
                     icon: const Icon(Icons.facebook, color: Colors.blue),
                     label: const Text(
                       "Log in with Facebook",
@@ -155,7 +172,8 @@ class _LoginScreenState extends State<LoginScreen> {
                       onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => const SignUpScreen()),
+                          MaterialPageRoute(
+                              builder: (context) => const SignUpScreen()),
                         );
                       },
                       child: const Text(
@@ -196,5 +214,6 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 }
+
 
 
