@@ -3,6 +3,7 @@ import 'wishlist_screen.dart';
 import 'profile_screen.dart';
 import 'bottom_nav.dart';
 import 'homepage_screen.dart';
+import 'bookdetails.dart';
 
 class CategoryScreen extends StatelessWidget {
   const CategoryScreen({super.key});
@@ -201,8 +202,7 @@ class CategoryScreen extends StatelessWidget {
         ],
       ),
       const SizedBox(height: 20),
-
-      GridView.builder(
+GridView.builder(
   shrinkWrap: true,
   physics: const NeverScrollableScrollPhysics(),
   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -211,32 +211,47 @@ class CategoryScreen extends StatelessWidget {
     mainAxisSpacing: 10,
     childAspectRatio: 0.65,
   ),
-  itemCount: 24,
+  itemCount: books.length,
   itemBuilder: (context, index) {
-    return Column(
-      children: [
-         ClipRRect(
-              borderRadius: BorderRadius.circular(12),
-              child: Image.asset(
-                books[index]["image"]!,
-                width: 100,
-                height: 140,
-                fit: BoxFit.cover,
-              ),
+    return GestureDetector(
+      onTap: () {
+        showDialog(
+          context: context,
+          builder: (_) => BookDetails(
+            title: books[index]["title"]!,
+            author: books[index]["author"]!,
+            description: books[index]["description"]!,
+            image: books[index]["image"]!,
+          ),
+        );
+      },
+      child: Column(
+        children: [
+          ClipRRect(
+            borderRadius: BorderRadius.circular(12),
+            child: Image.asset(
+              books[index]["image"]!,
+              width: 100,
+              height: 140,
+              fit: BoxFit.cover,
             ),
-            const SizedBox(height: 8),
-            Text(
-              books[index]["title"]!,
-              style: const TextStyle(
-                fontSize: 14,
-                fontWeight: FontWeight.bold,
-              ),
-              overflow: TextOverflow.ellipsis,
+          ),
+          const SizedBox(height: 8),
+          Text(
+            books[index]["title"]!,
+            style: const TextStyle(
+              fontSize: 14,
+              fontWeight: FontWeight.bold,
             ),
-      ],
+            overflow: TextOverflow.ellipsis,
+          ),
+        ],
+      ),
     );
   },
-),
+)
+
+      
     ],
       ),
       ),

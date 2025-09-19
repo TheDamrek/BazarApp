@@ -18,13 +18,7 @@ samples, guidance on mobile development, and a full API reference.
 
 
 
-const SizedBox(height: 20),
-            TextField(
-              decoration: InputDecoration(
-                labelText: 'Your email',
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(12),
-                  borderSide: BorderSide.none
-                ),
-              ),
-            ),
+
+
+
+             
