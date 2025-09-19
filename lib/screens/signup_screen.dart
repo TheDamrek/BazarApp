@@ -27,59 +27,42 @@ class SignUpScreen extends StatelessWidget {
             ),
            const SizedBox(height: 10),
             const Text(
-              'Create account and choose favorite menu',
+              'Create your account and join the adventure!',
               style: TextStyle(
                 color: Colors.grey,
                 fontSize: 14,
               ),
             ),  
-              const SizedBox(height: 35),
-             const Text(
-              'Name',
-              style: TextStyle(
-                color: Colors.black,
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-              ),
-            ),  
+              
             const SizedBox(height: 20),
             TextField(
               decoration: InputDecoration(
                 labelText: 'Your name',
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(12),
-                  borderSide: BorderSide.none
+                  borderSide: const BorderSide(
+                    color: Colors.black,
+                    width: 1,
+                  ),
                 ),
+
               ),
             ),
-             const SizedBox(height: 20),
-             const Text(
-              'Email',
-              style: TextStyle(
-                color: Colors.black,
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-              ),
-            ),  
+             
             const SizedBox(height: 20),
             TextField(
               decoration: InputDecoration(
                 labelText: 'Your email',
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(12),
-                  borderSide: BorderSide.none
+                  borderSide: const BorderSide(
+                    color: Colors.black,
+                    width: 1,
+                  ),
                 ),
               ),
             ),
-             const SizedBox(height: 20),
-             const Text(
-              'Password',
-              style: TextStyle(
-                color: Colors.black,
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-              ),
-            ),  
+             
             const SizedBox(height: 20),
             TextField(
               obscureText: true,
@@ -87,13 +70,33 @@ class SignUpScreen extends StatelessWidget {
                 labelText: 'Your password',
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(12),
-                  borderSide: BorderSide.none
+                  borderSide: const BorderSide(
+                    color: Colors.black,
+                    width: 1,
+                  ),
+                ),
+                suffixIcon: Icon( Icons.visibility_off, color: Colors.grey)
+              ),
+            ),
+
+
+            const SizedBox(height: 20),
+            TextField(
+              obscureText: true,
+              decoration: InputDecoration(
+                labelText: 'Confirm your password',
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(12),
+                  borderSide: const BorderSide(
+                    color: Colors.black,
+                    width: 1,
+                  ),
                 ),
                 suffixIcon: Icon( Icons.visibility_off, color: Colors.grey)
               ),
             ),
             
-            const SizedBox(height: 20),
+            const SizedBox(height: 60),
 SizedBox(
   width: double.infinity,
   child: ElevatedButton(
