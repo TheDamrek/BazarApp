@@ -62,15 +62,16 @@ static const List<Map<String, String>> authors = [
       Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: const [
-          Icon(Icons.notifications, size: 30),
+          Icon(Icons.notifications, size: 30, color: Colors.black),
           Text(
             "Home",
             style: TextStyle(
               fontSize: 25,
               fontWeight: FontWeight.bold,
+              color: Colors.black,
             ),
           ),
-          Icon(Icons.search, size: 30),
+          Icon(Icons.search, size: 30, color: Colors.black),
         ],
       ),
 

@@ -190,15 +190,16 @@ class CategoryScreen extends StatelessWidget {
       Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: const [
-          Icon(Icons.notifications, size: 30),
+          Icon(Icons.notifications, size: 30, color: Colors.black),
           Text(
             "Categories",
             style: TextStyle(
               fontSize: 25,
               fontWeight: FontWeight.bold,
+              color: Colors.black,
             ),
           ),
-          Icon(Icons.search, size: 30),
+          Icon(Icons.search, size: 30, color: Colors.black),
         ],
       ),
       const SizedBox(height: 20),
