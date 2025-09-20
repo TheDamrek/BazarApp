@@ -6,6 +6,8 @@ class BookDetails extends StatelessWidget {
   final String image;
   final String author;
   final String description;
+  final bool isWished;
+  final VoidCallback onWishToggle;
 
   const BookDetails({
     super.key,
@@ -13,6 +15,8 @@ class BookDetails extends StatelessWidget {
     required this.image,
     required this.author,
     required this.description,
+    required this.isWished,
+    required this.onWishToggle,
   });
 
    @override
@@ -87,6 +91,55 @@ class BookDetails extends StatelessWidget {
               child: const Icon(Icons.close, size: 24),
             ),
           ),
+
+         Positioned(
+  bottom: 20,
+  left: 0,
+  right: 0,
+  child: GestureDetector(
+    onTap: onWishToggle,
+    child: Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Text(
+          isWished ? "Wished!" : "Make a wish!",
+          style: TextStyle(
+            fontSize: 16,
+            fontWeight: FontWeight.bold,
+            color: Colors.pink,
+            // Pink glow effect
+            shadows: isWished
+                ? [
+                    Shadow(
+                      blurRadius: 10.0,
+                      color: Colors.pinkAccent,
+                      offset: Offset(0, 0),
+                    ),
+                  ]
+                : [],
+          ),
+        ),
+        const SizedBox(width: 8),
+        Icon(
+          isWished ? Icons.favorite : Icons.favorite_border,
+          color: Colors.pink,
+          size: 28,
+          shadows: isWished
+              ? [
+                  Shadow(
+                    blurRadius: 15.0,
+                    color: Colors.pinkAccent,
+                    offset: Offset(0, 0),
+                  ),
+                ]
+              : [],
+        ),
+      ],
+    ),
+  ),
+),
+
+
         ],
       ),
     );
