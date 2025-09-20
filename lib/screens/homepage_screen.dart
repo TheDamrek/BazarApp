@@ -142,7 +142,7 @@ Padding(
           fontWeight: FontWeight.bold,
         ),
       ),
-      Text(
+      Text( 
         "See all",
         style: TextStyle(
           fontSize: 14,

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
+import 'termsndpolicy.dart';
+
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({super.key});
@@ -189,6 +191,27 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       ),
                     ),
                   ],
+                ),
+                const SizedBox(height: 20),
+                const Center(
+                  child: Text(
+                    "By clicking Log In, you agree to our",
+                    style: TextStyle(fontSize: 12, color: Colors.grey),
+                  ),
+                ),
+                const SizedBox(height: 5),
+                Center(
+                  child: GestureDetector(
+                    onTap: () => showTermsAndPolicyDialog(context),
+                    child: const Text(
+                    "Terms and Data Policy.",
+                    style: TextStyle(
+                      fontSize: 12,
+                      color: Colors.deepPurple,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
                 ),
               ],
             ),

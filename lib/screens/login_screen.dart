@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'signup_screen.dart';
 import 'homepage_screen.dart';
 import 'package:bazar_app/auth/auth_service.dart';
+import 'termsndpolicy.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -196,14 +197,17 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                 ),
                 const SizedBox(height: 5),
-                const Center(
-                  child: Text(
+                Center(
+                  child: GestureDetector(
+                    onTap: () => showTermsAndPolicyDialog(context),
+                    child: const Text(
                     "Terms and Data Policy.",
                     style: TextStyle(
                       fontSize: 12,
                       color: Colors.deepPurple,
                       fontWeight: FontWeight.bold,
                     ),
+                    )
                   ),
                 ),
               ],
