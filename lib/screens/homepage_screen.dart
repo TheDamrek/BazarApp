@@ -142,13 +142,22 @@ Padding(
           fontWeight: FontWeight.bold,
         ),
       ),
-      Text( 
+      
+      GestureDetector( 
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => CategoryScreen()),
+          );
+        },
+        child: const Text(
         "See all",
         style: TextStyle(
           fontSize: 14,
           color: Colors.deepPurple,
           fontWeight: FontWeight.bold,
         ),
+      ),
       ),
     ],
   ),
